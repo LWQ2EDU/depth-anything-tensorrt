@@ -1,17 +1,18 @@
+
 import os
 import tempfile
+import time
 
 import cv2
 import gradio as gr
 import numpy as np
+import pycuda.autoinit
 import pycuda.driver as cuda  # GPU-CPU
 import tensorrt as trt
 from depth_anything.util.transform import NormalizeImage, PrepareForNet, Resize
 from gradio_imageslider import ImageSlider
 from PIL import Image
 from torchvision.transforms import Compose
-import pycuda.autoinit
-import time
 
 engine_path = '/home/lwq/DepthAM/depth-anything-tensorrt-build/depth_anything_vitl14.engine'
 
@@ -117,4 +118,5 @@ with gr.Blocks(css=css) as demo:
     
 
 if __name__ == '__main__':
+    
     demo.queue().launch()

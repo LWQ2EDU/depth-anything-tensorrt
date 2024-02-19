@@ -1,0 +1,8 @@
+gradio_imageslider
+gradio==4.14.0
+torch
+torchvision
+opencv-python
+huggingface_hub
+pycuda==2024.1
+# tensorrt # Please install the corresponding version according to your system environment.
